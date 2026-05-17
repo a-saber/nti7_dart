@@ -79,7 +79,7 @@ void main() {
   print(l1);
 
   // List user = ['1', 'ahmed', 20];
-  Map<String, dynamic> m = {
+  var m = {
     'id': 1,
     'name': 'ahmed',
     'age': 20,
@@ -92,7 +92,7 @@ void main() {
   print(m.containsValue(25));
 
   m['Name'] = 'Mohamed';
-  m['subjects'].add('art');
+  (m['subjects'] as List).add('art');
   print(m.remove('id'));
   print(m);
   for(var element in m.entries) {
@@ -138,6 +138,26 @@ void main() {
   print(average);
 
 
+  List<int> l3 = [1, 2, 3, 1];
+  l3.forEach(ac);
+
+  List<String> newList = l3.map<String>(mapper).toList();
+  print(newList);
+
+  List<int> prices = [10, 20, 30, 40, 50];
+  List<String> pricesWithUnits = prices.map<String>(convertToUnits).toList();
+  print(pricesWithUnits);
+}
+String convertToUnits(int price){
+  return '$price EGP';
+}
+// int Function(int)
+String mapper(int x1){
+  return 'new value: ${x1 * 2}';
+}
+// void Function(int) action
+void ac(int x1){
+  print(x1);
 }
 /*
 
