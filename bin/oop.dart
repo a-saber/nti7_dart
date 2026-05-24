@@ -2,7 +2,9 @@ import 'encapsulation.dart';
 void main(){
 
   Book b1 = Book(title: 'A');
+  // b1._price;
   b1.price = -50;
+  b1.title = "";
   // print(b1.setPrice(-50));
   // print(b1.setPrice(150));
   b1.display();
